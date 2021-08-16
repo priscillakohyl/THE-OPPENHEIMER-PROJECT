@@ -12,18 +12,17 @@ You may also find that the scripts are structured in a way where generating many
 
 # Files:
 * PriscillaSubmission
-	* (Folder) THEOPPENHEIMERPROJECT
-	Contains the test scripts and resource files.
-		* data
-		Contains test data for templates
+	* (Folder) THEOPPENHEIMERPROJECT</br>
+	_Contains the test scripts and resource files._
+		* data</br>
+		_Contains test data for templates_
 		* Pages
 		* Reports
 		* Tests
-			*upload
-			Contains csv files to test csv uploads
+			* upload</br>
+			_Contains csv files to test csv uploads_
 		* venv
 		* executionlist.bat
-	* OppenheimerProjectDev.jar
 	* README.txt
 	* Strategy.docx
 	* Testcases.xlsx
