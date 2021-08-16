@@ -1,13 +1,13 @@
 # Introduction
 This is a submission for THE OPPENHEIMER PROJECT by Priscilla Koh.
  
-The test suite verifies for the 3 features of the portal:
-F1: Enable Clerks to populate a list of working class heroes to the system
-F2: Enable Bookkeepers to retrieve the payable taxation relief for each working class
+The test suite verifies for the 3 features of the portal:</br>
+F1: Enable Clerks to populate a list of working class heroes to the system</br>
+F2: Enable Bookkeepers to retrieve the payable taxation relief for each working class</br>
 F3: Enable Governor to dispense the money to each working class hero at her discretion
 
 This testsuite is scripted in Python 3.9 using Robot Framework 3.3.2. 
-This is a loose interpretation of the Page Object Model. You may find the 'Page' in /THEOPPENHEIMERPROJECT/Tests/, and the 'Object' and custom keywords in /THEOPPENHEIMERPROJECT/Pages/.
+This is a loose interpretation of the Page Object Model. You may find the 'Page' in /THEOPPENHEIMERPROJECT/Tests/, and the 'Object' and custom keywords in /THEOPPENHEIMERPROJECT/Pages/.</br>
 You may also find that the scripts are structured in a way where generating many similar testcases is easy - there are 3 visible sections in each testcase - Test data, Expected Results and the Steps (Pre-requisite, Step 1 2 3 etc). As such, the test script will be more readable and user friendly.
 
 # Files:
@@ -22,7 +22,7 @@ You may also find that the scripts are structured in a way where generating many
 			*upload
 			Contains csv files to test csv uploads
 		* venv
-		executionlist.bat
+		* executionlist.bat
 	* OppenheimerProjectDev.jar
 	* README.txt
 	* Strategy.docx
@@ -34,8 +34,8 @@ Testsuite executable file, executionlist.bat can be found in the /THEOPPENHEIMER
 
 # How to Start
 1. Copy Project Directory and start the OppenheimerProjectDev.jar in cmd
-> java -jar (Directory)\OppenheimerProjectDev.jar
-eg. java -jar C:\Users\Priscilla\PriscillaSubmission\OppenheimerProjectDev.jar
+> java -jar (Directory)\OppenheimerProjectDev.jar</br>
+_eg. java -jar C:\Users\Priscilla\PriscillaSubmission\OppenheimerProjectDev.jar_
 
 2. Once done, you may find executionlist.bat in folder THEOPPENHEIMERPROJECT. Double click on executionlist.bat; Test will begin.
 
