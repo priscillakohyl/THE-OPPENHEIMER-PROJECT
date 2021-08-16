@@ -1,0 +1,5 @@
+${tcid};${desc};${data_csvpath};${data_salary};${data_taxpaid};${data_birthday1};${data_birthday2};${data_birthday3};${data_birthday4};${data_birthday5};${data_birthday6};${data_gender1};${data_gender2};${data_gender3};${data_gender4};${data_gender5};${data_gender6}
+TC001;Tax relief calculations (straight-through) for male;C://Users//P0103882//PycharmProjects//THEOPPENHEIMERPROJECT//Tests//upload//CSV_calc_st_m.csv;1000;10;01012005;01012004;01011987;01011972;01011947;01011944;m;m;m;m;m;m
+TC002;Tax relief calculations (straight-through) for female;C://Users//P0103882//PycharmProjects//THEOPPENHEIMERPROJECT//Tests//upload//CSV_calc_st_f.csv;1000;10;01012005;01012004;01011987;01011972;01011947;01011944;f;f;f;f;f;f
+TC003;Tax relief calculations (boundary) for male;C://Users//P0103882//PycharmProjects//THEOPPENHEIMERPROJECT//Tests//upload//CSV_calc_bd_m.csv;1000;10;01012021;01012003;01011986;01011971;01011946;01011945;m;m;m;m;m;m
+TC004;Tax relief calculations (boundary) for female;C://Users//P0103882//PycharmProjects//THEOPPENHEIMERPROJECT//Tests//upload//CSV_calc_bd_f.csv;1000;10;01012021;01012003;01011986;01011971;01011946;01011945;f;f;f;f;f;f

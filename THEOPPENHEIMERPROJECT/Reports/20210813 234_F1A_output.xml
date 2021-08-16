@@ -1,0 +1,4323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.5 on win32)" generated="20210813 02:34:49.236" rpa="false">
+<suite id="s1" name="F1A Populate-Retrieve Valid Others" source="C:\Users\P0103882\PycharmProjects\THEOPPENHEIMERPROJECT\Tests\F1A_Populate-Retrieve_Valid_Others.robot">
+<test id="s1-t1" name="F1F2A-TC001">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${api_singleInsert}</arg>
+</arguments>
+<assign>
+<var>${data_api}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${data_api} = http://localhost:8080/calculator/insert</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>{ "birthday": "01012002", "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" }</arg>
+</arguments>
+<assign>
+<var>${data_query}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${data_query} = { "birthday": "01012002", "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" }</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>100000001</arg>
+</arguments>
+<assign>
+<var>${data_natid}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${data_natid} = 100000001</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>202</arg>
+</arguments>
+<assign>
+<var>${exp_response}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${exp_response} = 202</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid}</arg>
+</arguments>
+<assign>
+<var>${exp_natid}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${unmasked} = 1000</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${maskedid} = 1000</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${maskedid} = 1000 $</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${maskedid} = 1000 $ $</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${maskedid} = 1000 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:34:49.992" level="INFO">${maskedid} = 1000 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:49.992"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:34:50.000" level="INFO">${maskedid} = 1000 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:50.000"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:50.000"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:50.000"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:34:50.002" level="INFO">${maskedid} = 1000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:34:50.000" endtime="20210813 02:34:50.002"></status>
+</kw>
+<msg timestamp="20210813 02:34:50.002" level="INFO">${exp_natid} = 1000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:34:50.002"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${exp_addition}</var>
+</assign>
+<msg timestamp="20210813 02:34:50.002" level="INFO">${exp_addition} = 1</msg>
+<status status="PASS" starttime="20210813 02:34:50.002" endtime="20210813 02:34:50.002"></status>
+</kw>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:34:51.356" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:34:50.002" endtime="20210813 02:34:51.356"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:34:51.356" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:34:51.356" endtime="20210813 02:34:55.435"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:34:55.436" endtime="20210813 02:34:55.556"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:34:55.560" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:34:55.556" endtime="20210813 02:34:55.560"></status>
+</kw>
+<msg timestamp="20210813 02:34:55.560" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:34:55.556" endtime="20210813 02:34:55.560"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>${exp_response}</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<msg timestamp="20210813 02:34:56.658" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:34:55.560" endtime="20210813 02:34:56.664"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:34:56.664" level="INFO">
+202</msg>
+<msg timestamp="20210813 02:34:56.680" level="INFO">${response} = 202</msg>
+<status status="PASS" starttime="20210813 02:34:56.664" endtime="20210813 02:34:56.680"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:34:56.680" level="INFO">${response} = 202</msg>
+<status status="PASS" starttime="20210813 02:34:56.680" endtime="20210813 02:34:56.680"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:34:56.680" endtime="20210813 02:34:56.680"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:55.560" endtime="20210813 02:34:56.680"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:34:56.680" endtime="20210813 02:34:59.096"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:34:59.096" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:34:59.096" endtime="20210813 02:35:02.079"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:02.080" endtime="20210813 02:35:02.201"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:56.680" endtime="20210813 02:35:02.201"></status>
+</kw>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+<arg>${exp_addition}</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:02.202" level="INFO">${numberOfRows} = 1</msg>
+<status status="PASS" starttime="20210813 02:35:02.202" endtime="20210813 02:35:02.202"></status>
+</kw>
+<msg timestamp="20210813 02:35:02.218" level="INFO">${currentNoOfRecords} = 1</msg>
+<status status="PASS" starttime="20210813 02:35:02.202" endtime="20210813 02:35:02.218"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:02.218" level="INFO">${noOfAddition} = 1</msg>
+<status status="PASS" starttime="20210813 02:35:02.218" endtime="20210813 02:35:02.218"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:02.218" level="INFO">${expectedNoOfAddition} = 1</msg>
+<status status="PASS" starttime="20210813 02:35:02.218" endtime="20210813 02:35:02.218"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:02.218" endtime="20210813 02:35:02.218"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:02.202" endtime="20210813 02:35:02.218"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-1</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:02.275" level="INFO">${cellValue} = 1000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:02.218" endtime="20210813 02:35:02.275"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:02.275" endtime="20210813 02:35:02.275"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:02.218" endtime="20210813 02:35:02.275"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-1</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${taxRelief}</var>
+</assign>
+<msg timestamp="20210813 02:35:02.322" level="INFO">${taxRelief} = 3120.00</msg>
+<status status="PASS" starttime="20210813 02:35:02.275" endtime="20210813 02:35:02.322"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${taxRelief}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:02.322" level="INFO">Length is 7</msg>
+<status status="PASS" starttime="20210813 02:35:02.322" endtime="20210813 02:35:02.322"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:02.322" endtime="20210813 02:35:04.805"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:02.322" endtime="20210813 02:35:04.805"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:34:49.992" endtime="20210813 02:35:04.806" critical="yes"></status>
+</test>
+<test id="s1-t2" name="F1F2A-TC009">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${api_multipleInsert}</arg>
+</arguments>
+<assign>
+<var>${data_api}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${data_api} = http://localhost:8080/calculator/insertMultiple</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>[{ "birthday": "01012002", "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" },{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002", "salary": "4500", "tax": "200" },{ "birthday": "01011970", "gender": "m", "name": "Mary Meh", "natid": "300000003", "salary": "2000", "tax": "50" }]</arg>
+</arguments>
+<assign>
+<var>${data_query}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${data_query} = [{ "birthday": "01012002", "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" },{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002"...</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>100000001</arg>
+</arguments>
+<assign>
+<var>${data_natid1}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${data_natid1} = 100000001</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>200000002</arg>
+</arguments>
+<assign>
+<var>${data_natid2}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${data_natid2} = 200000002</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>300000003</arg>
+</arguments>
+<assign>
+<var>${data_natid3}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${data_natid3} = 300000003</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>202</arg>
+</arguments>
+<assign>
+<var>${exp_response}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${exp_response} = 202</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid1}</arg>
+</arguments>
+<assign>
+<var>${exp_natid1}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${unmasked} = 1000</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 1000</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 1000 $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 1000 $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 1000 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 1000 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 1000 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 1000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${exp_natid1} = 1000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid2}</arg>
+</arguments>
+<assign>
+<var>${exp_natid2}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${unmasked} = 2000</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 2000</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 2000 $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 2000 $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 2000 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 2000 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 2000 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 2000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${exp_natid2} = 2000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid3}</arg>
+</arguments>
+<assign>
+<var>${exp_natid3}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${unmasked} = 3000</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 3000</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 3000 $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 3000 $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 3000 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.807" level="INFO">${maskedid} = 3000 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.807"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.823" level="INFO">${maskedid} = 3000 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:04.823" endtime="20210813 02:35:04.823"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.823" endtime="20210813 02:35:04.823"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.823"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.823" level="INFO">${maskedid} = 3000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:04.823" endtime="20210813 02:35:04.823"></status>
+</kw>
+<msg timestamp="20210813 02:35:04.823" level="INFO">${exp_natid3} = 3000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:04.823"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${exp_addition}</var>
+</assign>
+<msg timestamp="20210813 02:35:04.823" level="INFO">${exp_addition} = 3</msg>
+<status status="PASS" starttime="20210813 02:35:04.823" endtime="20210813 02:35:04.823"></status>
+</kw>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:05.839" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:35:04.823" endtime="20210813 02:35:05.839"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:35:05.839" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:05.839" endtime="20210813 02:35:08.964"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:08.966" endtime="20210813 02:35:09.089"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:09.089" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:09.089" endtime="20210813 02:35:09.089"></status>
+</kw>
+<msg timestamp="20210813 02:35:09.089" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:09.089" endtime="20210813 02:35:09.089"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>${exp_response}</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:10.116" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:35:09.089" endtime="20210813 02:35:10.116"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:35:10.116" level="INFO">
+202</msg>
+<msg timestamp="20210813 02:35:10.116" level="INFO">${response} = 202</msg>
+<status status="PASS" starttime="20210813 02:35:10.116" endtime="20210813 02:35:10.116"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:35:10.116" level="INFO">${response} = 202</msg>
+<status status="PASS" starttime="20210813 02:35:10.116" endtime="20210813 02:35:10.116"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:10.116" endtime="20210813 02:35:10.116"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:09.089" endtime="20210813 02:35:10.116"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:10.116" endtime="20210813 02:35:12.531"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:12.531" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:12.531" endtime="20210813 02:35:15.553"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:15.553" endtime="20210813 02:35:15.685"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:10.116" endtime="20210813 02:35:15.685"></status>
+</kw>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+<arg>${exp_addition}</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.700" level="INFO">${numberOfRows} = 3</msg>
+<status status="PASS" starttime="20210813 02:35:15.685" endtime="20210813 02:35:15.700"></status>
+</kw>
+<msg timestamp="20210813 02:35:15.700" level="INFO">${currentNoOfRecords} = 3</msg>
+<status status="PASS" starttime="20210813 02:35:15.685" endtime="20210813 02:35:15.700"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.700" level="INFO">${noOfAddition} = 3</msg>
+<status status="PASS" starttime="20210813 02:35:15.700" endtime="20210813 02:35:15.700"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.700" level="INFO">${expectedNoOfAddition} = 3</msg>
+<status status="PASS" starttime="20210813 02:35:15.700" endtime="20210813 02:35:15.700"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:15.700" endtime="20210813 02:35:15.700"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:15.685" endtime="20210813 02:35:15.700"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-3</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid1}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.768" level="INFO">${cellValue} = 1000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:15.700" endtime="20210813 02:35:15.768"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:15.768" endtime="20210813 02:35:15.769"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:15.700" endtime="20210813 02:35:15.769"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-2</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid2}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.801" level="INFO">${cellValue} = 2000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:15.770" endtime="20210813 02:35:15.801"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:15.801" endtime="20210813 02:35:15.801"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:15.770" endtime="20210813 02:35:15.801"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-1</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid3}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.847" level="INFO">${cellValue} = 3000$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:15.801" endtime="20210813 02:35:15.847"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:15.847" endtime="20210813 02:35:15.847"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:15.801" endtime="20210813 02:35:15.847"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-3</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${taxRelief1}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.879" level="INFO">${taxRelief1} = 3120.00</msg>
+<status status="PASS" starttime="20210813 02:35:15.847" endtime="20210813 02:35:15.879"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${taxRelief1}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:15.879" level="INFO">Length is 7</msg>
+<status status="PASS" starttime="20210813 02:35:15.879" endtime="20210813 02:35:15.879"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-2</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${taxRelief2}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.916" level="INFO">${taxRelief2} = 2650.00</msg>
+<status status="PASS" starttime="20210813 02:35:15.879" endtime="20210813 02:35:15.916"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${taxRelief2}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:15.916" level="INFO">Length is 7</msg>
+<status status="PASS" starttime="20210813 02:35:15.916" endtime="20210813 02:35:15.916"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-1</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${taxRelief3}</var>
+</assign>
+<msg timestamp="20210813 02:35:15.948" level="INFO">${taxRelief3} = 715.65</msg>
+<status status="PASS" starttime="20210813 02:35:15.916" endtime="20210813 02:35:15.948"></status>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<doc>Verifies that the given item is not empty.</doc>
+<arguments>
+<arg>${taxRelief3}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:15.948" level="INFO">Length is 6</msg>
+<status status="PASS" starttime="20210813 02:35:15.948" endtime="20210813 02:35:15.948"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:15.948" endtime="20210813 02:35:18.372"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:15.948" endtime="20210813 02:35:18.372"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:04.807" endtime="20210813 02:35:18.372" critical="yes"></status>
+</test>
+<test id="s1-t3" name="F1F2A-TC017">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:35:18.372" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:18.372" endtime="20210813 02:35:21.416"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:21.420" endtime="20210813 02:35:21.557"></status>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<doc>Verifies that element identified with ``locator`` is enabled.</doc>
+<arguments>
+<arg>${btn_uploadfile}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:21.557" endtime="20210813 02:35:21.588"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:21.588" endtime="20210813 02:35:24.149"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:21.588" endtime="20210813 02:35:24.149"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:18.372" endtime="20210813 02:35:24.149" critical="yes"></status>
+</test>
+<test id="s1-t4" name="F1F2A-TC018">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>C:\\Users\\P0103882\\PycharmProjects\\THEOPPENHEIMERPROJECT\\Tests\\upload\\CSV_pop.csv</arg>
+</arguments>
+<assign>
+<var>${data_csvpath}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.149" level="INFO">${data_csvpath} = C:\Users\P0103882\PycharmProjects\THEOPPENHEIMERPROJECT\Tests\upload\CSV_pop.csv</msg>
+<status status="PASS" starttime="20210813 02:35:24.149" endtime="20210813 02:35:24.149"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>110000001</arg>
+</arguments>
+<assign>
+<var>${data_natid1}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${data_natid1} = 110000001</msg>
+<status status="PASS" starttime="20210813 02:35:24.149" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>120000002</arg>
+</arguments>
+<assign>
+<var>${data_natid2}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${data_natid2} = 120000002</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>130000003</arg>
+</arguments>
+<assign>
+<var>${data_natid3}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${data_natid3} = 130000003</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>140000004</arg>
+</arguments>
+<assign>
+<var>${data_natid4}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${data_natid4} = 140000004</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>150000005</arg>
+</arguments>
+<assign>
+<var>${data_natid5}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${data_natid5} = 150000005</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid1}</arg>
+</arguments>
+<assign>
+<var>${exp_natid1}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${unmasked} = 1100</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1100</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1100 $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1100 $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1100 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1100 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1100 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1100$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${exp_natid1} = 1100$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid2}</arg>
+</arguments>
+<assign>
+<var>${exp_natid2}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${unmasked} = 1200</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1200</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1200 $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1200 $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1200 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1200 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1200 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1200$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${exp_natid2} = 1200$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid3}</arg>
+</arguments>
+<assign>
+<var>${exp_natid3}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${unmasked} = 1300</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1300</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1300 $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1300 $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1300 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1300 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1300 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1300$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${exp_natid3} = 1300$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid4}</arg>
+</arguments>
+<assign>
+<var>${exp_natid4}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${unmasked} = 1400</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1400</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.155" level="INFO">${maskedid} = 1400 $</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.155"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1400 $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1400 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1400 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1400 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1400$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${exp_natid4} = 1400$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.155" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid5}</arg>
+</arguments>
+<assign>
+<var>${exp_natid5}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${unmasked} = 1500</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1500</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1500 $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1500 $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1500 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1500 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1500 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${maskedid} = 1500$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${exp_natid5} = 1500$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${exp_addition}</var>
+</assign>
+<msg timestamp="20210813 02:35:24.171" level="INFO">${exp_addition} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:24.171"></status>
+</kw>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:25.191" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:35:24.171" endtime="20210813 02:35:25.191"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:35:25.191" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:25.191" endtime="20210813 02:35:28.345"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:28.346" endtime="20210813 02:35:28.463"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:28.463" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:28.463" endtime="20210813 02:35:28.463"></status>
+</kw>
+<msg timestamp="20210813 02:35:28.463" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:28.463" endtime="20210813 02:35:28.463"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>${btn_uploadfile}</arg>
+<arg>${data_csvpath}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:28.463" endtime="20210813 02:35:28.516"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:28.518" endtime="20210813 02:35:31.025"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:31.025" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:31.025" endtime="20210813 02:35:34.036"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:34.036" endtime="20210813 02:35:34.169"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:28.517" endtime="20210813 02:35:34.169"></status>
+</kw>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+<arg>${exp_addition}</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:34.185" level="INFO">${numberOfRows} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:34.169" endtime="20210813 02:35:34.185"></status>
+</kw>
+<msg timestamp="20210813 02:35:34.185" level="INFO">${currentNoOfRecords} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:34.169" endtime="20210813 02:35:34.185"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:34.185" level="INFO">${noOfAddition} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:34.185" endtime="20210813 02:35:34.185"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:34.185" level="INFO">${expectedNoOfAddition} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:34.185" endtime="20210813 02:35:34.185"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:34.185" endtime="20210813 02:35:34.185"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:34.169" endtime="20210813 02:35:34.185"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-5</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid1}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:34.252" level="INFO">${cellValue} = 1100$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:34.185" endtime="20210813 02:35:34.252"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:34.252" endtime="20210813 02:35:34.253"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:34.185" endtime="20210813 02:35:34.253"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-4</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid2}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:34.286" level="INFO">${cellValue} = 1200$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:34.255" endtime="20210813 02:35:34.286"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:34.286" endtime="20210813 02:35:34.286"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:34.254" endtime="20210813 02:35:34.286"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-3</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid3}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:34.326" level="INFO">${cellValue} = 1300$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:34.286" endtime="20210813 02:35:34.326"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:34.326" endtime="20210813 02:35:34.326"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:34.286" endtime="20210813 02:35:34.326"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-2</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid4}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:34.373" level="INFO">${cellValue} = 1400$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:34.326" endtime="20210813 02:35:34.373"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:34.373" endtime="20210813 02:35:34.373"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:34.326" endtime="20210813 02:35:34.373"></status>
+</kw>
+<kw name="Cell Value Should Be" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>-1</arg>
+<arg>${col_natid}</arg>
+<arg>${exp_natid5}</arg>
+</arguments>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${table}</arg>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${cellValue}</var>
+</assign>
+<msg timestamp="20210813 02:35:34.420" level="INFO">${cellValue} = 1500$$$$$</msg>
+<status status="PASS" starttime="20210813 02:35:34.373" endtime="20210813 02:35:34.420"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${cellValue}</arg>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:34.420" endtime="20210813 02:35:34.420"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:34.373" endtime="20210813 02:35:34.420"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:34.420" endtime="20210813 02:35:36.891"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:34.420" endtime="20210813 02:35:36.891"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:24.149" endtime="20210813 02:35:36.891" critical="yes"></status>
+</test>
+<test id="s1-t5" name="F1F2A-TC019">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>C:\\Users\\P0103882\\PycharmProjects\\THEOPPENHEIMERPROJECT\\Tests\\upload\\TXT_pop.txt</arg>
+</arguments>
+<assign>
+<var>${data_csvpath}</var>
+</assign>
+<msg timestamp="20210813 02:35:36.891" level="INFO">${data_csvpath} = C:\Users\P0103882\PycharmProjects\THEOPPENHEIMERPROJECT\Tests\upload\TXT_pop.txt</msg>
+<status status="PASS" starttime="20210813 02:35:36.891" endtime="20210813 02:35:36.891"></status>
+</kw>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:37.925" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:35:36.891" endtime="20210813 02:35:37.925"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:35:37.925" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:37.925" endtime="20210813 02:35:40.883"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:40.884" endtime="20210813 02:35:40.997"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:40.997" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:40.997" endtime="20210813 02:35:40.997"></status>
+</kw>
+<msg timestamp="20210813 02:35:40.997" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:40.997" endtime="20210813 02:35:40.997"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>${btn_uploadfile}</arg>
+<arg>${data_csvpath}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:40.997" endtime="20210813 02:35:41.046"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:41.048" endtime="20210813 02:35:43.517"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:43.518" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:43.517" endtime="20210813 02:35:46.578"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:46.578" endtime="20210813 02:35:46.695"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:41.047" endtime="20210813 02:35:46.695"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:46.708" level="INFO">${numberOfRows} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:46.698" endtime="20210813 02:35:46.708"></status>
+</kw>
+<msg timestamp="20210813 02:35:46.708" level="INFO">${currentNoOfRecords} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:46.698" endtime="20210813 02:35:46.708"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:46.709" level="INFO">${noOfAddition} = 5</msg>
+<status status="PASS" starttime="20210813 02:35:46.708" endtime="20210813 02:35:46.709"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:46.709" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:46.709" endtime="20210813 02:35:46.709"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:46.711" level="FAIL">5 != 0</msg>
+<status status="FAIL" starttime="20210813 02:35:46.710" endtime="20210813 02:35:46.711"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:35:46.697" endtime="20210813 02:35:46.711"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:35:46.696" endtime="20210813 02:35:46.711"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:46.712" endtime="20210813 02:35:49.176"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:46.712" endtime="20210813 02:35:49.176"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:35:36.891" endtime="20210813 02:35:49.177" critical="yes">5 != 0</status>
+</test>
+<test id="s1-t6" name="F1F2A-TC020">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>C:\\Users\\P0103882\\PycharmProjects\\THEOPPENHEIMERPROJECT\\Tests\\upload\\CSV_pop_invaliddate.csv</arg>
+</arguments>
+<assign>
+<var>${data_csvpath}</var>
+</assign>
+<msg timestamp="20210813 02:35:49.181" level="INFO">${data_csvpath} = C:\Users\P0103882\PycharmProjects\THEOPPENHEIMERPROJECT\Tests\upload\CSV_pop_invaliddate.csv</msg>
+<status status="PASS" starttime="20210813 02:35:49.180" endtime="20210813 02:35:49.181"></status>
+</kw>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:50.209" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:35:49.181" endtime="20210813 02:35:50.216"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:35:50.218" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:50.217" endtime="20210813 02:35:54.118"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:54.119" endtime="20210813 02:35:54.239"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:54.249" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:54.240" endtime="20210813 02:35:54.249"></status>
+</kw>
+<msg timestamp="20210813 02:35:54.249" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:54.240" endtime="20210813 02:35:54.249"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>${btn_uploadfile}</arg>
+<arg>${data_csvpath}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:54.250" endtime="20210813 02:35:54.284"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:54.288" endtime="20210813 02:35:56.705"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:35:56.706" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:35:56.706" endtime="20210813 02:35:59.773"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:35:59.773" endtime="20210813 02:35:59.893"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:54.286" endtime="20210813 02:35:59.893"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:35:59.893" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:59.893" endtime="20210813 02:35:59.893"></status>
+</kw>
+<msg timestamp="20210813 02:35:59.893" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:59.893" endtime="20210813 02:35:59.893"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:59.893" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:59.893" endtime="20210813 02:35:59.893"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:35:59.909" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:35:59.909" endtime="20210813 02:35:59.909"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:35:59.909" endtime="20210813 02:35:59.909"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:59.893" endtime="20210813 02:35:59.909"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:59.893" endtime="20210813 02:35:59.909"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:35:59.909" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:59.909" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:35:49.179" endtime="20210813 02:36:02.411" critical="yes"></status>
+</test>
+<test id="s1-t7" name="F1F2A-TC021">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>C:\\Users\\P0103882\\PycharmProjects\\THEOPPENHEIMERPROJECT\\Tests\\upload\\CSV_pop_get.csv</arg>
+</arguments>
+<assign>
+<var>${data_csvpath}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_csvpath} = C:\Users\P0103882\PycharmProjects\THEOPPENHEIMERPROJECT\Tests\upload\CSV_pop_get.csv</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${api_get}</arg>
+</arguments>
+<assign>
+<var>${data_api}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_api} = http://localhost:8080/calculator/taxRelief</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>210000001</arg>
+</arguments>
+<assign>
+<var>${data_natid1}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_natid1} = 210000001</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>220000002</arg>
+</arguments>
+<assign>
+<var>${data_natid2}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_natid2} = 220000002</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>230000003</arg>
+</arguments>
+<assign>
+<var>${data_natid3}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_natid3} = 230000003</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>240000004</arg>
+</arguments>
+<assign>
+<var>${data_natid4}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_natid4} = 240000004</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>250000005</arg>
+</arguments>
+<assign>
+<var>${data_natid5}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_natid5} = 250000005</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Mark Spencer</arg>
+</arguments>
+<assign>
+<var>${data_name1}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_name1} = Mark Spencer</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Bryan Lim</arg>
+</arguments>
+<assign>
+<var>${data_name2}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_name2} = Bryan Lim</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Destiny Child</arg>
+</arguments>
+<assign>
+<var>${data_name3}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_name3} = Destiny Child</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Tiffany Turquoise</arg>
+</arguments>
+<assign>
+<var>${data_name4}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_name4} = Tiffany Turquoise</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Tan Lee Ming</arg>
+</arguments>
+<assign>
+<var>${data_name5}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${data_name5} = Tan Lee Ming</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid1}</arg>
+</arguments>
+<assign>
+<var>${exp_natid1}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${unmasked} = 2100</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2100</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2100 $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2100 $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2100 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2100 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2100 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2100$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${exp_natid1} = 2100$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid2}</arg>
+</arguments>
+<assign>
+<var>${exp_natid2}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${unmasked} = 2200</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2200</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2200 $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2200 $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2200 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2200 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2200 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.411" level="INFO">${maskedid} = 2200$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.411"></status>
+</kw>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${exp_natid2} = 2200$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid3}</arg>
+</arguments>
+<assign>
+<var>${exp_natid3}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${unmasked} = 2300</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2300</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2300 $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2300 $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2300 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2300 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2300 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2300$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${exp_natid3} = 2300$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid4}</arg>
+</arguments>
+<assign>
+<var>${exp_natid4}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${unmasked} = 2400</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2400</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2400 $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2400 $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2400 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2400 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2400 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2400$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${exp_natid4} = 2400$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Get Masked ID" library="homepage">
+<arguments>
+<arg>${data_natid5}</arg>
+</arguments>
+<assign>
+<var>${exp_natid5}</var>
+</assign>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${noOfMask}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${noOfMask} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>0</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${unmasked}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${unmasked} = 2500</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${unmasked}</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2500</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} IN RANGE [ ${noOfMask} ]" type="for">
+<kw name="${index} = 0" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2500 $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 1" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2500 $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 2" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2500 $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 3" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2500 $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="${index} = 4" type="foritem">
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${maskedid}</arg>
+<arg>$</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2500 $ $ $ $ $</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>"""${maskedid}""".replace(" ","")</arg>
+</arguments>
+<assign>
+<var>${maskedid}</var>
+</assign>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${maskedid} = 2500$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<msg timestamp="20210813 02:36:02.427" level="INFO">${exp_natid5} = 2500$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:02.427"></status>
+</kw>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:03.452" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:36:02.427" endtime="20210813 02:36:03.452"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:36:03.452" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:36:03.452" endtime="20210813 02:36:06.496"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:36:06.497" endtime="20210813 02:36:06.621"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>${btn_uploadfile}</arg>
+<arg>${data_csvpath}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:06.621" endtime="20210813 02:36:06.662"></status>
+</kw>
+<kw name="GET" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>${data_api}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:06.663" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response body</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">
+[
+    {
+        "natid": "2100$$$$$",
+        "name": "Mark Spencer",
+        "relief": "990.00"
+    },
+    {
+        "natid": "2200$$$$$",
+        "name": "Bryan Lim",
+        "relief": "1584.00"
+    },
+    {
+        "natid": "2300$$$$$",
+        "name": "Destiny Child",
+        "relief": "1985.00"
+    },
+    {
+        "natid": "2400$$$$$",
+        "name": "Tiffany Turquoise",
+        "relief": "1953.00"
+    },
+    {
+        "natid": "2500$$$$$",
+        "name": "Tan Lee Ming",
+        "relief": "747.00"
+    }
+]</msg>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${response} = [{'natid': '2100$$$$$', 'name': 'Mark Spencer', 'relief': '990.00'}, {'natid': '2200$$$$$', 'name': 'Bryan Lim', 'relief': '1584.00'}, {'natid': '2300$$$$$', 'name': 'Destiny Child', 'relief': '1985.0...</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="${record} IN [ @{response} ]" type="for">
+<kw name="${record} = {'natid': '2100$$$$$', 'name': 'Mark Spencer', 'relief': '990.00'}" type="foritem">
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>natid</arg>
+</arguments>
+<assign>
+<var>${natid}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${natid} = 2100$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="NatId Should Be Masked" library="homepage">
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${xtimes}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${xtimes} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>4</arg>
+<arg>end=None</arg>
+</arguments>
+<assign>
+<var>${substring}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${substring} = $$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Should Contain X Times" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<arguments>
+<arg>${substring}</arg>
+<arg>\$</arg>
+<arg>${xtimes}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:07.678" level="INFO">Item found from container 5 times.</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>${exp_natid${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>name</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${name} = Mark Spencer</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${data_name${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${count} + 1</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="${record} = {'natid': '2200$$$$$', 'name': 'Bryan Lim', 'relief': '1584.00'}" type="foritem">
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>natid</arg>
+</arguments>
+<assign>
+<var>${natid}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.678" level="INFO">${natid} = 2200$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.678"></status>
+</kw>
+<kw name="NatId Should Be Masked" library="homepage">
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${xtimes}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${xtimes} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>4</arg>
+<arg>end=None</arg>
+</arguments>
+<assign>
+<var>${substring}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${substring} = $$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Contain X Times" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<arguments>
+<arg>${substring}</arg>
+<arg>\$</arg>
+<arg>${xtimes}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:07.693" level="INFO">Item found from container 5 times.</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>${exp_natid${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>name</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${name} = Bryan Lim</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${data_name${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${count} + 1</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${count} = 3</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="${record} = {'natid': '2300$$$$$', 'name': 'Destiny Child', 'relief': '1985.00'}" type="foritem">
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>natid</arg>
+</arguments>
+<assign>
+<var>${natid}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${natid} = 2300$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="NatId Should Be Masked" library="homepage">
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${xtimes}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${xtimes} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>4</arg>
+<arg>end=None</arg>
+</arguments>
+<assign>
+<var>${substring}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${substring} = $$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Contain X Times" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<arguments>
+<arg>${substring}</arg>
+<arg>\$</arg>
+<arg>${xtimes}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:07.693" level="INFO">Item found from container 5 times.</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>${exp_natid${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>name</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${name} = Destiny Child</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${data_name${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${count} + 1</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${count} = 4</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="${record} = {'natid': '2400$$$$$', 'name': 'Tiffany Turquoise', 'relief': '1953.00'}" type="foritem">
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>natid</arg>
+</arguments>
+<assign>
+<var>${natid}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${natid} = 2400$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="NatId Should Be Masked" library="homepage">
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${xtimes}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${xtimes} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>4</arg>
+<arg>end=None</arg>
+</arguments>
+<assign>
+<var>${substring}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${substring} = $$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Contain X Times" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<arguments>
+<arg>${substring}</arg>
+<arg>\$</arg>
+<arg>${xtimes}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:07.693" level="INFO">Item found from container 5 times.</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>${exp_natid${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>name</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${name} = Tiffany Turquoise</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${data_name${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${count} + 1</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${count} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="${record} = {'natid': '2500$$$$$', 'name': 'Tan Lee Ming', 'relief': '747.00'}" type="foritem">
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>natid</arg>
+</arguments>
+<assign>
+<var>${natid}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${natid} = 2500$$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="NatId Should Be Masked" library="homepage">
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${natid}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">Length is 9</msg>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${length} = 9</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${length} - 4</arg>
+</arguments>
+<assign>
+<var>${xtimes}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${xtimes} = 5</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>4</arg>
+<arg>end=None</arg>
+</arguments>
+<assign>
+<var>${substring}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${substring} = $$$$$</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Contain X Times" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` ``count`` times.</doc>
+<arguments>
+<arg>${substring}</arg>
+<arg>\$</arg>
+<arg>${xtimes}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:07.693" level="INFO">Item found from container 5 times.</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${natid}</arg>
+<arg>${exp_natid${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${record}</arg>
+<arg>name</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${name} = Tan Lee Ming</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${name}</arg>
+<arg>${data_name${count}}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${count} + 1</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20210813 02:36:07.693" level="INFO">${count} = 6</msg>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:07.693"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.678" endtime="20210813 02:36:07.693"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:10.127"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:07.693" endtime="20210813 02:36:10.127"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:02.411" endtime="20210813 02:36:10.127" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20210813 02:34:49.236" endtime="20210813 02:36:10.127"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="1">Critical Tests</stat>
+<stat pass="6" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="1" id="s1" name="F1A Populate-Retrieve Valid Others">F1A Populate-Retrieve Valid Others</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210813 02:34:51.356" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:34:56.658" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:35:05.839" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:35:10.116" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:35:25.191" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:35:37.925" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:35:50.209" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:36:03.452" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+</errors>
+</robot>

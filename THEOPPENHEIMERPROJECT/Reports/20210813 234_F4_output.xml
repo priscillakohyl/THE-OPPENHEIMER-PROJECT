@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.5 on win32)" generated="20210813 02:39:59.405" rpa="false">
+<suite id="s1" name="F4 Miscellaenous" source="C:\Users\P0103882\PycharmProjects\THEOPPENHEIMERPROJECT\Tests\F4_Miscellaenous.robot">
+<test id="s1-t1" name="F4-TC001">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:40:00.209" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:40:00.209" endtime="20210813 02:40:03.403"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:40:03.405" endtime="20210813 02:40:03.536"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.552" level="INFO">${numberOfRows} = 6</msg>
+<status status="PASS" starttime="20210813 02:40:03.536" endtime="20210813 02:40:03.552"></status>
+</kw>
+<msg timestamp="20210813 02:40:03.552" level="INFO">${noOfRecords} = 6</msg>
+<status status="PASS" starttime="20210813 02:40:03.536" endtime="20210813 02:40:03.552"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${noOfRecords} + 1</arg>
+</arguments>
+<assign>
+<var>${noOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.552" level="INFO">${noOfRows} = 7</msg>
+<status status="PASS" starttime="20210813 02:40:03.552" endtime="20210813 02:40:03.552"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${totalRelief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.552" level="INFO">${totalRelief} = 0</msg>
+<status status="PASS" starttime="20210813 02:40:03.552" endtime="20210813 02:40:03.552"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | ${noOfRows} ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${i} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.552" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20210813 02:40:03.552" endtime="20210813 02:40:03.552"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${index}</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${relief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.607" level="INFO">${relief} = 1490.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.552" endtime="20210813 02:40:03.607"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>'%.2f'%(${totalRelief} + ${relief})</arg>
+</arguments>
+<assign>
+<var>${totalRelief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.607" level="INFO">${totalRelief} = 1490.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.607" endtime="20210813 02:40:03.607"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:03.552" endtime="20210813 02:40:03.607"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${i} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.607" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20210813 02:40:03.607" endtime="20210813 02:40:03.607"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${index}</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${relief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.654" level="INFO">${relief} = 1490.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.607" endtime="20210813 02:40:03.654"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>'%.2f'%(${totalRelief} + ${relief})</arg>
+</arguments>
+<assign>
+<var>${totalRelief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.654" level="INFO">${totalRelief} = 2980.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.654" endtime="20210813 02:40:03.654"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:03.607" endtime="20210813 02:40:03.654"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${i} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.654" level="INFO">${index} = 4</msg>
+<status status="PASS" starttime="20210813 02:40:03.654" endtime="20210813 02:40:03.654"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${index}</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${relief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.685" level="INFO">${relief} = 1292.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.654" endtime="20210813 02:40:03.685"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>'%.2f'%(${totalRelief} + ${relief})</arg>
+</arguments>
+<assign>
+<var>${totalRelief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.685" level="INFO">${totalRelief} = 4272.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.685" endtime="20210813 02:40:03.685"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:03.654" endtime="20210813 02:40:03.685"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${i} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.685" level="INFO">${index} = 5</msg>
+<status status="PASS" starttime="20210813 02:40:03.685" endtime="20210813 02:40:03.685"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${index}</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${relief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.721" level="INFO">${relief} = 995.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.685" endtime="20210813 02:40:03.721"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>'%.2f'%(${totalRelief} + ${relief})</arg>
+</arguments>
+<assign>
+<var>${totalRelief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.721" level="INFO">${totalRelief} = 5267.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.721" endtime="20210813 02:40:03.721"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:03.685" endtime="20210813 02:40:03.721"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${i} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.736" level="INFO">${index} = 6</msg>
+<status status="PASS" starttime="20210813 02:40:03.721" endtime="20210813 02:40:03.736"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${index}</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${relief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.768" level="INFO">${relief} = 863.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.736" endtime="20210813 02:40:03.768"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>'%.2f'%(${totalRelief} + ${relief})</arg>
+</arguments>
+<assign>
+<var>${totalRelief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.768" level="INFO">${totalRelief} = 6130.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.768" endtime="20210813 02:40:03.768"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:03.721" endtime="20210813 02:40:03.768"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${i} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.768" level="INFO">${index} = 7</msg>
+<status status="PASS" starttime="20210813 02:40:03.768" endtime="20210813 02:40:03.768"></status>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<doc>Returns contents of table cell.</doc>
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${index}</arg>
+<arg>${col_relief}</arg>
+</arguments>
+<assign>
+<var>${relief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.805" level="INFO">${relief} = 549.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.768" endtime="20210813 02:40:03.805"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>'%.2f'%(${totalRelief} + ${relief})</arg>
+</arguments>
+<assign>
+<var>${totalRelief}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.805" level="INFO">${totalRelief} = 6679.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.805" endtime="20210813 02:40:03.805"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:03.768" endtime="20210813 02:40:03.805"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:03.552" endtime="20210813 02:40:03.805"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${totalRelief}</arg>
+</arguments>
+<assign>
+<var>${totalReliefAmount}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.805" level="INFO">${totalReliefAmount} = 6679.00</msg>
+<status status="PASS" starttime="20210813 02:40:03.805" endtime="20210813 02:40:03.805"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${totalReliefAmount}</arg>
+<arg>will be dispensed to</arg>
+<arg>${noOfRecords}</arg>
+<arg>Working Class Hero</arg>
+</arguments>
+<assign>
+<var>${totalReliefMsg}</var>
+</assign>
+<msg timestamp="20210813 02:40:03.805" level="INFO">${totalReliefMsg} = 6679.00 will be dispensed to 6 Working Class Hero</msg>
+<status status="PASS" starttime="20210813 02:40:03.805" endtime="20210813 02:40:03.805"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${lbl_totalTaxRelief}</arg>
+<arg>${totalReliefMsg}</arg>
+</arguments>
+<msg timestamp="20210813 02:40:03.837" level="INFO">Element 'xpath://div[@id="contents"]/div[@class="jumbotron jumbotron-fluid"]/div[@class="container"]/p[@class="lead"]' contains text '6679.00 will be dispensed to 6 Working Class Hero'.</msg>
+<status status="PASS" starttime="20210813 02:40:03.805" endtime="20210813 02:40:03.837"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:40:03.837" endtime="20210813 02:40:06.301"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:03.837" endtime="20210813 02:40:06.301"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:40:00.209" endtime="20210813 02:40:06.301" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210813 02:39:59.405" endtime="20210813 02:40:06.301"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="F4 Miscellaenous">F4 Miscellaenous</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

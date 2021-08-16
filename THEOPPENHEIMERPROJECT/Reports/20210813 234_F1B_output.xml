@@ -1,0 +1,2841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.5 on win32)" generated="20210813 02:36:11.060" rpa="false">
+<suite id="s1" name="F1B Populate-Retrieve Invalid" source="C:\Users\P0103882\PycharmProjects\THEOPPENHEIMERPROJECT\Tests\F1B_Populate-Retrieve_Invalid.robot">
+<test id="s1-t1" name="F1F2A- ${tcid} : Invalid single insertion without birthday">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insert</arg>
+<arg>{ "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" }</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:13.242" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:36:11.887" endtime="20210813 02:36:13.242"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:11.887" endtime="20210813 02:36:13.242"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:36:13.242" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:36:13.242" endtime="20210813 02:36:16.648"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:36:16.648" endtime="20210813 02:36:16.774"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:36:16.774" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:16.774" endtime="20210813 02:36:16.774"></status>
+</kw>
+<msg timestamp="20210813 02:36:16.774" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:16.774" endtime="20210813 02:36:16.774"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:16.774" endtime="20210813 02:36:17.809"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:17.809" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:36:17.824" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:36:17.809" endtime="20210813 02:36:17.824"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:17.824" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:36:17.824" endtime="20210813 02:36:17.824"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:17.824" endtime="20210813 02:36:17.824"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:16.774" endtime="20210813 02:36:17.824"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:36:17.824" endtime="20210813 02:36:20.254"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:20.254" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:36:20.254" endtime="20210813 02:36:23.253"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:36:23.253" endtime="20210813 02:36:23.366"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:17.824" endtime="20210813 02:36:23.366"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:36:23.366" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:23.366" endtime="20210813 02:36:23.366"></status>
+</kw>
+<msg timestamp="20210813 02:36:23.366" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:23.366" endtime="20210813 02:36:23.366"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:36:23.366" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:23.366" endtime="20210813 02:36:23.366"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:36:23.382" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:23.366" endtime="20210813 02:36:23.382"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:23.382" endtime="20210813 02:36:23.382"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:23.366" endtime="20210813 02:36:23.382"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:23.366" endtime="20210813 02:36:23.382"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:11.877" endtime="20210813 02:36:23.382"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:36:23.382" endtime="20210813 02:36:25.842"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:23.382" endtime="20210813 02:36:25.842"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:11.877" endtime="20210813 02:36:25.842" critical="yes"></status>
+</test>
+<test id="s1-t2" name="F1F2A- ${tcid} : Invalid single insertion without gender">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insert</arg>
+<arg>{ "birthday": "01012002", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" }</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:26.878" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:36:25.857" endtime="20210813 02:36:26.878"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:25.857" endtime="20210813 02:36:26.878"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:36:26.878" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:36:26.878" endtime="20210813 02:36:29.926"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:36:29.927" endtime="20210813 02:36:30.051"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:36:30.051" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:30.051" endtime="20210813 02:36:30.051"></status>
+</kw>
+<msg timestamp="20210813 02:36:30.051" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:30.051" endtime="20210813 02:36:30.051"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:31.085" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:36:30.051" endtime="20210813 02:36:31.085"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:31.085" level="INFO">
+202</msg>
+<msg timestamp="20210813 02:36:31.085" level="INFO">${response} = 202</msg>
+<status status="PASS" starttime="20210813 02:36:31.085" endtime="20210813 02:36:31.085"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:31.085" level="INFO">${response} = 202</msg>
+<status status="PASS" starttime="20210813 02:36:31.085" endtime="20210813 02:36:31.085"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:31.085" level="FAIL">202 != 500</msg>
+<status status="FAIL" starttime="20210813 02:36:31.085" endtime="20210813 02:36:31.085"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:36:30.051" endtime="20210813 02:36:31.085"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:36:25.857" endtime="20210813 02:36:31.085"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:36:31.085" endtime="20210813 02:36:33.537"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:31.085" endtime="20210813 02:36:33.537"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:36:25.842" endtime="20210813 02:36:33.537" critical="yes">202 != 500</status>
+</test>
+<test id="s1-t3" name="F1F2A- ${tcid} : Invalid single insertion without name">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insert</arg>
+<arg>{ "birthday": "01012002", "gender": "m", "natid": "100000001", "salary": "4000", "tax": "100" }</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:34.557" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:36:33.537" endtime="20210813 02:36:34.557"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:33.537" endtime="20210813 02:36:34.557"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:36:34.557" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:36:34.557" endtime="20210813 02:36:37.589"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:36:37.589" endtime="20210813 02:36:37.722"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:36:37.722" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:37.722" endtime="20210813 02:36:37.722"></status>
+</kw>
+<msg timestamp="20210813 02:36:37.722" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:37.722" endtime="20210813 02:36:37.722"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:37.722" endtime="20210813 02:36:38.775"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:38.775" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:36:38.775" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:36:38.775" endtime="20210813 02:36:38.775"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:38.775" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:36:38.775" endtime="20210813 02:36:38.775"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:38.775" endtime="20210813 02:36:38.775"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:37.722" endtime="20210813 02:36:38.775"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:36:38.775" endtime="20210813 02:36:41.199"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:41.199" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:36:41.199" endtime="20210813 02:36:44.208"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:36:44.208" endtime="20210813 02:36:44.328"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:38.775" endtime="20210813 02:36:44.328"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:36:44.340" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:44.330" endtime="20210813 02:36:44.340"></status>
+</kw>
+<msg timestamp="20210813 02:36:44.340" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:44.329" endtime="20210813 02:36:44.340"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:36:44.340" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:44.340" endtime="20210813 02:36:44.340"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:36:44.341" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:44.341" endtime="20210813 02:36:44.341"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:44.341" endtime="20210813 02:36:44.341"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:44.329" endtime="20210813 02:36:44.341"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:44.329" endtime="20210813 02:36:44.341"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:33.537" endtime="20210813 02:36:44.341"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:36:44.342" endtime="20210813 02:36:46.772"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:44.342" endtime="20210813 02:36:46.773"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:33.537" endtime="20210813 02:36:46.775" critical="yes"></status>
+</test>
+<test id="s1-t4" name="F1F2A- ${tcid} : Invalid single insertion without natid">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insert</arg>
+<arg>{ "birthday": "01012002", "gender": "m", "name": "John Smith", "salary": "4000", "tax": "100" }</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:47.797" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:36:46.788" endtime="20210813 02:36:47.799"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:46.788" endtime="20210813 02:36:47.799"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:36:47.800" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:36:47.799" endtime="20210813 02:36:50.978"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:36:50.978" endtime="20210813 02:36:51.104"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:36:51.118" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:51.105" endtime="20210813 02:36:51.118"></status>
+</kw>
+<msg timestamp="20210813 02:36:51.118" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:51.105" endtime="20210813 02:36:51.118"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:51.118" endtime="20210813 02:36:52.144"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:52.145" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:36:52.145" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:36:52.144" endtime="20210813 02:36:52.145"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:36:52.146" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:36:52.146" endtime="20210813 02:36:52.146"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:52.146" endtime="20210813 02:36:52.147"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:51.118" endtime="20210813 02:36:52.147"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:36:52.147" endtime="20210813 02:36:54.607"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:36:54.608" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:36:54.607" endtime="20210813 02:36:57.966"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:36:57.966" endtime="20210813 02:36:58.086"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:52.147" endtime="20210813 02:36:58.086"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:36:58.086" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:58.086" endtime="20210813 02:36:58.086"></status>
+</kw>
+<msg timestamp="20210813 02:36:58.086" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:58.086" endtime="20210813 02:36:58.086"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:36:58.086" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:58.086" endtime="20210813 02:36:58.086"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:36:58.086" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:36:58.086" endtime="20210813 02:36:58.086"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:36:58.086" endtime="20210813 02:36:58.086"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:58.086" endtime="20210813 02:36:58.101"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:58.086" endtime="20210813 02:36:58.101"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:46.788" endtime="20210813 02:36:58.101"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:36:58.101" endtime="20210813 02:37:00.559"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:58.101" endtime="20210813 02:37:00.559"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:36:46.785" endtime="20210813 02:37:00.559" critical="yes"></status>
+</test>
+<test id="s1-t5" name="F1F2A- ${tcid} : Invalid single insertion without salary">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insert</arg>
+<arg>{ "birthday": "01012002", "gender": "m", "name": "John Smith", "natid": "100000001", "tax": "100" }</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:01.585" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:37:00.565" endtime="20210813 02:37:01.585"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:00.565" endtime="20210813 02:37:01.585"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:37:01.585" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:01.585" endtime="20210813 02:37:05.689"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:05.689" endtime="20210813 02:37:05.812"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:05.812" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:05.812" endtime="20210813 02:37:05.812"></status>
+</kw>
+<msg timestamp="20210813 02:37:05.812" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:05.812" endtime="20210813 02:37:05.812"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:05.827" endtime="20210813 02:37:06.843"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:37:06.843" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:37:06.843" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:37:06.843" endtime="20210813 02:37:06.843"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:37:06.843" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:37:06.843" endtime="20210813 02:37:06.843"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:06.843" endtime="20210813 02:37:06.843"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:05.812" endtime="20210813 02:37:06.843"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:37:06.843" endtime="20210813 02:37:09.284"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:09.284" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:09.284" endtime="20210813 02:37:12.383"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:12.383" endtime="20210813 02:37:12.506"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:06.843" endtime="20210813 02:37:12.506"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:12.520" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:12.506" endtime="20210813 02:37:12.520"></status>
+</kw>
+<msg timestamp="20210813 02:37:12.520" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:12.506" endtime="20210813 02:37:12.520"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:37:12.520" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:12.520" endtime="20210813 02:37:12.520"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:37:12.520" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:12.520" endtime="20210813 02:37:12.520"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:12.520" endtime="20210813 02:37:12.520"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:12.506" endtime="20210813 02:37:12.520"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:12.506" endtime="20210813 02:37:12.520"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:00.565" endtime="20210813 02:37:12.520"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:37:12.520" endtime="20210813 02:37:14.986"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:12.520" endtime="20210813 02:37:14.986"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:00.565" endtime="20210813 02:37:14.986" critical="yes"></status>
+</test>
+<test id="s1-t6" name="F1F2A- ${tcid} : Invalid single insertion without tax">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insert</arg>
+<arg>{ "birthday": "01012002", "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000" }</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:16.006" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:37:14.986" endtime="20210813 02:37:16.006"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:14.986" endtime="20210813 02:37:16.006"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:37:16.006" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:16.006" endtime="20210813 02:37:19.021"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:19.021" endtime="20210813 02:37:19.149"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:19.149" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:19.149" endtime="20210813 02:37:19.149"></status>
+</kw>
+<msg timestamp="20210813 02:37:19.149" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:19.149" endtime="20210813 02:37:19.149"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:19.149" endtime="20210813 02:37:20.172"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:37:20.172" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:37:20.172" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:37:20.172" endtime="20210813 02:37:20.172"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:37:20.172" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:37:20.172" endtime="20210813 02:37:20.172"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:20.172" endtime="20210813 02:37:20.172"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:19.149" endtime="20210813 02:37:20.172"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:37:20.172" endtime="20210813 02:37:22.618"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:22.618" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:22.618" endtime="20210813 02:37:25.673"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:25.674" endtime="20210813 02:37:25.794"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:20.172" endtime="20210813 02:37:25.794"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:25.794" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:25.794" endtime="20210813 02:37:25.794"></status>
+</kw>
+<msg timestamp="20210813 02:37:25.810" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:25.794" endtime="20210813 02:37:25.810"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:37:25.810" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:25.810" endtime="20210813 02:37:25.810"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:37:25.810" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:25.810" endtime="20210813 02:37:25.810"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:25.810" endtime="20210813 02:37:25.810"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:25.794" endtime="20210813 02:37:25.810"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:25.794" endtime="20210813 02:37:25.810"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:14.986" endtime="20210813 02:37:25.810"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:37:25.810" endtime="20210813 02:37:28.247"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:25.810" endtime="20210813 02:37:28.247"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:14.986" endtime="20210813 02:37:28.247" critical="yes"></status>
+</test>
+<test id="s1-t7" name="F1F2A- ${tcid} : Invalid single insertion with invalid date">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insert</arg>
+<arg>{ "birthday": "01 Jan 2002", "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" }</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:29.266" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:37:28.247" endtime="20210813 02:37:29.266"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:28.247" endtime="20210813 02:37:29.266"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:37:29.266" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:29.266" endtime="20210813 02:37:32.308"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:32.308" endtime="20210813 02:37:32.447"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:32.463" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:32.447" endtime="20210813 02:37:32.463"></status>
+</kw>
+<msg timestamp="20210813 02:37:32.463" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:32.447" endtime="20210813 02:37:32.463"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:32.463" endtime="20210813 02:37:33.479"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:37:33.494" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:37:33.494" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:37:33.494" endtime="20210813 02:37:33.494"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:37:33.494" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:37:33.494" endtime="20210813 02:37:33.494"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:33.494" endtime="20210813 02:37:33.494"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:32.463" endtime="20210813 02:37:33.494"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:37:33.494" endtime="20210813 02:37:35.917"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:35.917" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:35.917" endtime="20210813 02:37:39.086"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:39.086" endtime="20210813 02:37:39.212"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:33.494" endtime="20210813 02:37:39.212"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:39.228" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:39.212" endtime="20210813 02:37:39.228"></status>
+</kw>
+<msg timestamp="20210813 02:37:39.228" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:39.212" endtime="20210813 02:37:39.228"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:37:39.228" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:39.228" endtime="20210813 02:37:39.228"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:37:39.228" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:39.228" endtime="20210813 02:37:39.228"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:39.228" endtime="20210813 02:37:39.228"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:39.212" endtime="20210813 02:37:39.228"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:39.212" endtime="20210813 02:37:39.228"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:28.247" endtime="20210813 02:37:39.228"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:37:39.228" endtime="20210813 02:37:41.803"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:39.228" endtime="20210813 02:37:41.804"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:28.247" endtime="20210813 02:37:41.806" critical="yes"></status>
+</test>
+<test id="s1-t8" name="F1F2A- ${tcid} : Invalid multiple insertion without birthday">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insertMultiple</arg>
+<arg>[{ "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" },{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002", "salary": "4500", "tax": "200" },{ "birthday": "01011970", "gender": "m", "name": "Mary Meh", "natid": "300000003", "salary": "2000", "tax": "50" }]</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:42.846" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:37:41.821" endtime="20210813 02:37:42.853"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:41.820" endtime="20210813 02:37:42.853"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:37:42.854" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:42.854" endtime="20210813 02:37:45.815"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:45.816" endtime="20210813 02:37:45.933"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:45.945" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:45.934" endtime="20210813 02:37:45.945"></status>
+</kw>
+<msg timestamp="20210813 02:37:45.945" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:45.934" endtime="20210813 02:37:45.945"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:45.946" endtime="20210813 02:37:46.965"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:37:46.966" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:37:46.966" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:37:46.965" endtime="20210813 02:37:46.966"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:37:46.967" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:37:46.966" endtime="20210813 02:37:46.967"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:46.967" endtime="20210813 02:37:46.967"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:45.945" endtime="20210813 02:37:46.967"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:37:46.968" endtime="20210813 02:37:49.351"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:49.353" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:49.352" endtime="20210813 02:37:52.731"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:52.731" endtime="20210813 02:37:52.857"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:46.967" endtime="20210813 02:37:52.857"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:52.872" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:52.859" endtime="20210813 02:37:52.872"></status>
+</kw>
+<msg timestamp="20210813 02:37:52.873" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:52.859" endtime="20210813 02:37:52.873"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:37:52.873" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:52.873" endtime="20210813 02:37:52.873"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:37:52.874" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:52.873" endtime="20210813 02:37:52.874"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:37:52.874" endtime="20210813 02:37:52.874"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:52.858" endtime="20210813 02:37:52.874"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:52.858" endtime="20210813 02:37:52.874"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:41.819" endtime="20210813 02:37:52.874"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:37:52.875" endtime="20210813 02:37:55.377"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:52.875" endtime="20210813 02:37:55.377"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:41.812" endtime="20210813 02:37:55.380" critical="yes"></status>
+</test>
+<test id="s1-t9" name="F1F2A- ${tcid} : Invalid multiple insertion without gender">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insertMultiple</arg>
+<arg>[{ "birthday": "01012002", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" },{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002", "salary": "4500", "tax": "200" },{ "birthday": "01011970", "gender": "m", "name": "Mary Meh", "natid": "300000003", "salary": "2000", "tax": "50" }]</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:37:56.407" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:37:55.393" endtime="20210813 02:37:56.409"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:37:55.392" endtime="20210813 02:37:56.409"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:37:56.410" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:37:56.409" endtime="20210813 02:37:59.428"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:37:59.429" endtime="20210813 02:37:59.544"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:37:59.544" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:59.544" endtime="20210813 02:37:59.544"></status>
+</kw>
+<msg timestamp="20210813 02:37:59.544" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:37:59.544" endtime="20210813 02:37:59.544"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:00.583" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:37:59.544" endtime="20210813 02:38:00.583"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:00.583" level="INFO">
+202</msg>
+<msg timestamp="20210813 02:38:00.583" level="INFO">${response} = 202</msg>
+<status status="PASS" starttime="20210813 02:38:00.583" endtime="20210813 02:38:00.583"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:00.583" level="INFO">${response} = 202</msg>
+<status status="PASS" starttime="20210813 02:38:00.583" endtime="20210813 02:38:00.583"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:00.583" level="FAIL">202 != 500</msg>
+<status status="FAIL" starttime="20210813 02:38:00.583" endtime="20210813 02:38:00.583"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:37:59.544" endtime="20210813 02:38:00.583"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:37:55.391" endtime="20210813 02:38:00.583"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:00.583" endtime="20210813 02:38:03.040"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:00.583" endtime="20210813 02:38:03.040"></status>
+</kw>
+<status status="FAIL" starttime="20210813 02:37:55.386" endtime="20210813 02:38:03.040" critical="yes">202 != 500</status>
+</test>
+<test id="s1-t10" name="F1F2A- ${tcid} : Invalid multiple insertion without name">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insertMultiple</arg>
+<arg>[{ "birthday": "01012002", "gender": "m", "natid": "100000001", "salary": "4000", "tax": "100" },{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002", "salary": "4500", "tax": "200" },{ "birthday": "01011970", "gender": "m", "name": "Mary Meh", "natid": "300000003", "salary": "2000", "tax": "50" }]</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:04.060" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:38:03.040" endtime="20210813 02:38:04.060"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:03.040" endtime="20210813 02:38:04.060"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:38:04.060" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:04.060" endtime="20210813 02:38:07.282"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:38:07.282" endtime="20210813 02:38:07.401"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:38:07.401" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:07.401" endtime="20210813 02:38:07.401"></status>
+</kw>
+<msg timestamp="20210813 02:38:07.401" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:07.401" endtime="20210813 02:38:07.401"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:07.401" endtime="20210813 02:38:08.457"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:08.457" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:38:08.457" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:38:08.457" endtime="20210813 02:38:08.457"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:08.457" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:38:08.457" endtime="20210813 02:38:08.457"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:08.457" endtime="20210813 02:38:08.457"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:07.401" endtime="20210813 02:38:08.457"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:08.457" endtime="20210813 02:38:10.895"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:10.895" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:10.895" endtime="20210813 02:38:13.869"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:38:13.869" endtime="20210813 02:38:13.998"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:08.457" endtime="20210813 02:38:13.998"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:38:13.998" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:13.998" endtime="20210813 02:38:13.998"></status>
+</kw>
+<msg timestamp="20210813 02:38:13.998" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:13.998" endtime="20210813 02:38:13.998"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:38:13.998" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:13.998" endtime="20210813 02:38:13.998"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:38:13.998" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:13.998" endtime="20210813 02:38:13.998"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:14.013" endtime="20210813 02:38:14.013"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:13.998" endtime="20210813 02:38:14.013"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:13.998" endtime="20210813 02:38:14.013"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:03.040" endtime="20210813 02:38:14.013"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:14.013" endtime="20210813 02:38:16.462"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:14.013" endtime="20210813 02:38:16.462"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:03.040" endtime="20210813 02:38:16.465" critical="yes"></status>
+</test>
+<test id="s1-t11" name="F1F2A- ${tcid} : Invalid multiple insertion without natid">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insertMultiple</arg>
+<arg>[{ "birthday": "01012002", "gender": "m", "name": "John Smith", "salary": "4000", "tax": "100" },{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002", "salary": "4500", "tax": "200" },{ "birthday": "01011970", "gender": "m", "name": "Mary Meh", "natid": "300000003", "salary": "2000", "tax": "50" }]</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:17.501" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:38:16.465" endtime="20210813 02:38:17.501"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:16.465" endtime="20210813 02:38:17.501"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:38:17.501" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:17.501" endtime="20210813 02:38:21.010"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:38:21.010" endtime="20210813 02:38:21.124"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:38:21.124" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:21.124" endtime="20210813 02:38:21.124"></status>
+</kw>
+<msg timestamp="20210813 02:38:21.124" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:21.124" endtime="20210813 02:38:21.124"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:21.140" endtime="20210813 02:38:22.185"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:22.185" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:38:22.185" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:38:22.185" endtime="20210813 02:38:22.185"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:22.185" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:38:22.185" endtime="20210813 02:38:22.185"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:22.185" endtime="20210813 02:38:22.185"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:21.140" endtime="20210813 02:38:22.185"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:22.185" endtime="20210813 02:38:24.588"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:24.588" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:24.588" endtime="20210813 02:38:27.644"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:38:27.644" endtime="20210813 02:38:27.765"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:22.185" endtime="20210813 02:38:27.765"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:38:27.774" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:27.765" endtime="20210813 02:38:27.774"></status>
+</kw>
+<msg timestamp="20210813 02:38:27.774" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:27.765" endtime="20210813 02:38:27.774"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:38:27.774" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:27.774" endtime="20210813 02:38:27.774"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:38:27.774" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:27.774" endtime="20210813 02:38:27.774"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:27.774" endtime="20210813 02:38:27.774"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:27.765" endtime="20210813 02:38:27.774"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:27.765" endtime="20210813 02:38:27.774"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:16.465" endtime="20210813 02:38:27.774"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:27.774" endtime="20210813 02:38:30.263"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:27.774" endtime="20210813 02:38:30.263"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:16.465" endtime="20210813 02:38:30.263" critical="yes"></status>
+</test>
+<test id="s1-t12" name="F1F2A- ${tcid} : Invalid multiple insertion without salary">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insertMultiple</arg>
+<arg>[{ "birthday": "01012002", "gender": "m", "name": "John Smith", "natid": "100000001", "tax": "100" },{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002", "salary": "4500", "tax": "200" },{ "birthday": "01011970", "gender": "m", "name": "Mary Meh", "natid": "300000003", "salary": "2000", "tax": "50" }]</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:31.287" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:38:30.269" endtime="20210813 02:38:31.287"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:30.269" endtime="20210813 02:38:31.287"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:38:31.287" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:31.287" endtime="20210813 02:38:34.397"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:38:34.397" endtime="20210813 02:38:34.526"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:38:34.526" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:34.526" endtime="20210813 02:38:34.526"></status>
+</kw>
+<msg timestamp="20210813 02:38:34.526" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:34.526" endtime="20210813 02:38:34.526"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:34.526" endtime="20210813 02:38:35.583"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:35.583" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:38:35.583" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:38:35.583" endtime="20210813 02:38:35.583"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:35.583" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:38:35.583" endtime="20210813 02:38:35.583"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:35.583" endtime="20210813 02:38:35.583"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:34.526" endtime="20210813 02:38:35.583"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:35.583" endtime="20210813 02:38:37.996"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:37.996" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:37.996" endtime="20210813 02:38:41.073"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:38:41.073" endtime="20210813 02:38:41.194"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:35.583" endtime="20210813 02:38:41.194"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:38:41.209" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:41.194" endtime="20210813 02:38:41.209"></status>
+</kw>
+<msg timestamp="20210813 02:38:41.209" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:41.194" endtime="20210813 02:38:41.209"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:38:41.209" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:41.209" endtime="20210813 02:38:41.209"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:38:41.209" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:41.209" endtime="20210813 02:38:41.209"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:41.209" endtime="20210813 02:38:41.209"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:41.194" endtime="20210813 02:38:41.209"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:41.194" endtime="20210813 02:38:41.209"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:30.269" endtime="20210813 02:38:41.209"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:41.209" endtime="20210813 02:38:43.698"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:41.209" endtime="20210813 02:38:43.698"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:30.269" endtime="20210813 02:38:43.701" critical="yes"></status>
+</test>
+<test id="s1-t13" name="F1F2A- ${tcid} : Invalid multiple insertion without tax">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insertMultiple</arg>
+<arg>[{ "birthday": "01012002", "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000"},{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002", "salary": "4500", "tax": "200" },{ "birthday": "01011970", "gender": "m", "name": "Mary Meh", "natid": "300000003", "salary": "2000", "tax": "50" }]</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:44.734" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:38:43.717" endtime="20210813 02:38:44.736"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:43.716" endtime="20210813 02:38:44.736"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:38:44.736" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:44.736" endtime="20210813 02:38:48.054"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:38:48.054" endtime="20210813 02:38:48.174"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:38:48.188" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:48.175" endtime="20210813 02:38:48.188"></status>
+</kw>
+<msg timestamp="20210813 02:38:48.188" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:48.174" endtime="20210813 02:38:48.188"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:48.189" endtime="20210813 02:38:49.216"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:49.217" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:38:49.217" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:38:49.216" endtime="20210813 02:38:49.217"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:38:49.217" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:38:49.217" endtime="20210813 02:38:49.217"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:49.218" endtime="20210813 02:38:49.218"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:48.188" endtime="20210813 02:38:49.218"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:49.218" endtime="20210813 02:38:51.612"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:51.614" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:51.613" endtime="20210813 02:38:54.984"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:38:54.984" endtime="20210813 02:38:55.105"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:49.218" endtime="20210813 02:38:55.105"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:38:55.120" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:55.105" endtime="20210813 02:38:55.120"></status>
+</kw>
+<msg timestamp="20210813 02:38:55.120" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:55.105" endtime="20210813 02:38:55.120"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:38:55.120" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:55.120" endtime="20210813 02:38:55.120"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:38:55.120" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:38:55.120" endtime="20210813 02:38:55.120"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:38:55.120" endtime="20210813 02:38:55.120"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:55.105" endtime="20210813 02:38:55.120"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:55.105" endtime="20210813 02:38:55.120"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:43.714" endtime="20210813 02:38:55.120"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:38:55.120" endtime="20210813 02:38:57.579"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:55.120" endtime="20210813 02:38:57.579"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:43.707" endtime="20210813 02:38:57.579" critical="yes"></status>
+</test>
+<test id="s1-t14" name="F1F2A- ${tcid} : Invalid multiple insertion with invalid date">
+<kw name="Invalid insertion">
+<arguments>
+<arg>http://localhost:8080/calculator/insertMultiple</arg>
+<arg>[{ "birthday": "01 Jan 2002", "gender": "m", "name": "John Smith", "natid": "100000001", "salary": "4000", "tax": "100" },{ "birthday": "01011985", "gender": "f", "name": "Jane Joe", "natid": "200000002", "salary": "4500", "tax": "200" }]</arg>
+</arguments>
+<kw name="Clear Existing Records" library="homepage">
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api_clear}</arg>
+</arguments>
+<msg timestamp="20210813 02:38:58.600" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<status status="PASS" starttime="20210813 02:38:57.579" endtime="20210813 02:38:58.605"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:57.579" endtime="20210813 02:38:58.605"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210813 02:38:58.605" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:38:58.605" endtime="20210813 02:39:01.648"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:39:01.649" endtime="20210813 02:39:01.765"></status>
+</kw>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+</arguments>
+<assign>
+<var>${noOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:39:01.777" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:39:01.765" endtime="20210813 02:39:01.777"></status>
+</kw>
+<msg timestamp="20210813 02:39:01.777" level="INFO">${noOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:39:01.765" endtime="20210813 02:39:01.777"></status>
+</kw>
+<kw name="Query Should Return" library="homepage">
+<arguments>
+<arg>${data_api}</arg>
+<arg>${data_query}</arg>
+<arg>500</arg>
+</arguments>
+<kw name="POST" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>${api}</arg>
+<arg>${query}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:39:01.777" endtime="20210813 02:39:02.797"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response status</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:39:02.797" level="INFO">
+500</msg>
+<msg timestamp="20210813 02:39:02.797" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:39:02.797" endtime="20210813 02:39:02.797"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210813 02:39:02.797" level="INFO">${response} = 500</msg>
+<status status="PASS" starttime="20210813 02:39:02.797" endtime="20210813 02:39:02.797"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${expectedResult}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:39:02.797" endtime="20210813 02:39:02.797"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:39:01.777" endtime="20210813 02:39:02.797"></status>
+</kw>
+<kw name="Close Browser and Reopen URL" library="common">
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:39:02.797" endtime="20210813 02:39:05.233"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210813 02:39:05.233" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<status status="PASS" starttime="20210813 02:39:05.233" endtime="20210813 02:39:08.245"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210813 02:39:08.245" endtime="20210813 02:39:08.366"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:39:02.797" endtime="20210813 02:39:08.366"></status>
+</kw>
+<kw name="No Records Should Be Added" library="homepage">
+<arguments>
+<arg>${tbl_taxRelief}</arg>
+<arg>${noOfRecords}</arg>
+</arguments>
+<kw name="Records Should Be Added" library="homepage">
+<arguments>
+<arg>${table}</arg>
+<arg>${initialNoOfRecords}</arg>
+<arg>0</arg>
+</arguments>
+<kw name="Get Total Table Rows" library="common">
+<arguments>
+<arg>${table}</arg>
+</arguments>
+<assign>
+<var>${currentNoOfRecords}</var>
+</assign>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${table}/tbody/tr</arg>
+</arguments>
+<assign>
+<var>${numberOfRows}</var>
+</assign>
+<msg timestamp="20210813 02:39:08.381" level="INFO">${numberOfRows} = 0</msg>
+<status status="PASS" starttime="20210813 02:39:08.366" endtime="20210813 02:39:08.381"></status>
+</kw>
+<msg timestamp="20210813 02:39:08.381" level="INFO">${currentNoOfRecords} = 0</msg>
+<status status="PASS" starttime="20210813 02:39:08.366" endtime="20210813 02:39:08.381"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${currentNoOfRecords} - ${initialNoOfRecords}</arg>
+</arguments>
+<assign>
+<var>${noOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:39:08.381" level="INFO">${noOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:39:08.381" endtime="20210813 02:39:08.381"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<assign>
+<var>${expectedNoOfAddition}</var>
+</assign>
+<msg timestamp="20210813 02:39:08.381" level="INFO">${expectedNoOfAddition} = 0</msg>
+<status status="PASS" starttime="20210813 02:39:08.381" endtime="20210813 02:39:08.381"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${noOfAddition}</arg>
+<arg>${expectedNoOfAddition}</arg>
+</arguments>
+<status status="PASS" starttime="20210813 02:39:08.381" endtime="20210813 02:39:08.381"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:39:08.366" endtime="20210813 02:39:08.381"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:39:08.366" endtime="20210813 02:39:08.381"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:57.579" endtime="20210813 02:39:08.381"></status>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210813 02:39:08.381" endtime="20210813 02:39:10.840"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:39:08.381" endtime="20210813 02:39:10.840"></status>
+</kw>
+<status status="PASS" starttime="20210813 02:38:57.579" endtime="20210813 02:39:10.840" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20210813 02:36:11.076" endtime="20210813 02:39:10.840"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="12" fail="2">Critical Tests</stat>
+<stat pass="12" fail="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="12" fail="2" id="s1" name="F1B Populate-Retrieve Invalid">F1B Populate-Retrieve Invalid</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210813 02:36:13.242" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:36:26.878" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:36:31.085" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:36:34.557" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:36:47.797" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:37:01.585" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:37:16.006" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:37:29.266" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:37:42.846" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:37:56.407" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:38:00.583" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:38:04.060" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:38:17.501" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:38:31.287" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:38:44.734" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+<msg timestamp="20210813 02:38:58.600" level="WARN">Response body content is not JSON. Content-Type is: application/json;charset=UTF-8</msg>
+</errors>
+</robot>
