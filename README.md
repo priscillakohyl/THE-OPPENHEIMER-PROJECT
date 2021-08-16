@@ -42,27 +42,12 @@ _eg. java -jar C:\Users\Priscilla\PriscillaSubmission\OppenheimerProjectDev.jar_
 3. Once done you may view report in THEOPPENHEIMERPROJECT/Reports/
 
 # Test Summary
-## F1A - Valid Population & Retrieval
-Total Testcases: 7
-1 Expected Failures
-6 Expected Passes
 
-## F1B - Invalid Population & Retrieval
-Total Testcases: 14
-2 Expected Failures
-12 Expected Passes
+| Test Summary | |
+| ----------- | ----------- |
+| F1A - Valid Population & Retrieval | Total Testcases: 7</br>1 Expected Failures</br>6 Expected Passes |
+| F1B - Invalid Population & Retrieval | Total Testcases: 14</br>2 Expected Failures</br>12 Expected Passes |
+| F2 - TaxCalculations | Total Testcases: 4</br>0 Expected Failures</br>4 Expected Passes |
+| F3 - Dispense | Total Testcases: 2</br>0 Expected Failures</br>1 Expected Passes |
+| F4 - Miscellaenous | Total Testcases: 1</br>0 Expected Failures</br>1 Expected Passes |
 
-## F2_TaxCalculations
-Total Testcases: 4
-0 Expected Failures
-4 Expected Passes
-
-## F3 - Dispense
-Total Testcases: 2
-0 Expected Failures
-2 Expected Passes
-
-## F4 - Miscellaenous
-Total Testcases: 1
-0 Expected Failures
-1 Expected Passes
